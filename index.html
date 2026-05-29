@@ -241,6 +241,12 @@ body::after {
   height: 100%;
 }
 
+.diagram-arrow.arrow-v {
+  display: none;
+  width: 24px;
+  height: 48px;
+}
+
 .diagram-arrow-label {
   font-family: 'Quicksand', sans-serif;
   font-size: 10.5px;
@@ -502,6 +508,271 @@ body::after {
   opacity: 0.5;
 }
 
+/* ===== NEXT STEP (Claude Code) ===== */
+.next-step {
+  margin-bottom: 72px;
+  position: relative;
+}
+
+.next-step-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.next-step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 2px solid var(--lavender);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--lavender-deep);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.next-step-badge::before {
+  content: "★";
+  font-size: 12px;
+}
+
+.next-step-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.next-step-title .accent {
+  position: relative;
+  display: inline-block;
+  color: var(--lavender-deep);
+}
+
+.next-step-title .accent::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: -2px;
+  right: -2px;
+  height: 9px;
+  background: var(--mint);
+  border-radius: 4px;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.next-step-sub {
+  font-size: 14.5px;
+  color: var(--text-soft);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+/* compare diagram */
+.compare {
+  background: white;
+  border-radius: 28px;
+  padding: 40px 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 40px rgba(180, 150, 200, 0.08);
+  border: 2px solid #F3E9F5;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  position: relative;
+}
+
+.compare-grid::before {
+  content: "+";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--lavender-deep);
+  border: 2px solid var(--lavender);
+  z-index: 2;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.compare-col {
+  padding: 24px 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.compare-col.left {
+  background: linear-gradient(135deg, #FFF0F4, #FFE9F0);
+}
+
+.compare-col.right {
+  background: linear-gradient(135deg, #F0EAFA, #E8F4F0);
+}
+
+.compare-icon {
+  width: 56px;
+  height: 56px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  box-shadow: 0 4px 12px rgba(180, 150, 200, 0.12);
+}
+
+.compare-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.compare-name {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.compare-role {
+  font-size: 12px;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.compare-desc {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--text-soft);
+}
+
+.compare-foot {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 13.5px;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.compare-foot strong {
+  color: var(--lavender-deep);
+  font-weight: 700;
+}
+
+/* what can do cards */
+.code-uses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.code-use {
+  background: white;
+  border-radius: 20px;
+  padding: 24px 22px;
+  border: 2px solid var(--bg-soft);
+  position: relative;
+}
+
+.code-use-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.code-use-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.code-use:nth-child(1) .code-use-icon { background: var(--peach); }
+.code-use:nth-child(2) .code-use-icon { background: var(--mint); }
+.code-use:nth-child(3) .code-use-icon { background: var(--sky); }
+.code-use:nth-child(4) .code-use-icon { background: var(--pink); }
+
+.code-use-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.code-use-desc {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+/* note box */
+.note-box {
+  background: #FFFAEF;
+  border: 2px dashed var(--lemon-deep);
+  border-radius: 20px;
+  padding: 22px 24px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.note-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--lemon);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  color: #A68A3D;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.note-content h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.note-content p {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--text-soft);
+}
+
 /* ===== TIPS ===== */
 .tips-header {
   text-align: center;
@@ -592,13 +863,27 @@ body::after {
 @media (max-width: 720px) {
   .wrap { padding: 40px 20px 60px; }
   .what-is { padding: 32px 20px; }
-  .diagram { grid-template-columns: 1fr; gap: 12px; }
-  .diagram-arrows { flex-direction: row; transform: rotate(90deg); margin: 8px 0; }
+  .diagram { grid-template-columns: 1fr; gap: 8px; }
+  .diagram-arrows { flex-direction: column; gap: 4px; margin: 4px 0; }
+  .diagram-arrow.arrow-h { display: none; }
+  .diagram-arrow.arrow-v { display: block; }
   .cats { grid-template-columns: 1fr; gap: 16px; }
   .flow { padding: 36px 20px; }
   .flow-steps { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
   .flow-step:nth-child(2)::after { display: none; }
   .tips-grid { grid-template-columns: 1fr; }
+  .compare { padding: 28px 20px; }
+  .compare-grid { grid-template-columns: 1fr; gap: 14px; }
+  .compare-grid::before {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+    order: 2;
+  }
+  .compare-col.left { order: 1; }
+  .compare-col.right { order: 3; }
+  .code-uses { grid-template-columns: 1fr; gap: 14px; }
+  .next-step-title { font-size: 24px; }
 }
 
 @media (max-width: 420px) {
@@ -645,17 +930,29 @@ body::after {
       </div>
 
       <div class="diagram-arrows">
-        <div class="diagram-arrow">
+        <div class="diagram-arrow arrow-h">
           <svg viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 12 L52 12" stroke="#B89BD9" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3"/>
             <polygon points="50,8 56,12 50,16" fill="#B89BD9"/>
           </svg>
         </div>
+        <div class="diagram-arrow arrow-v">
+          <svg viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4 L12 40" stroke="#B89BD9" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3"/>
+            <polygon points="8,38 12,44 16,38" fill="#B89BD9"/>
+          </svg>
+        </div>
         <div class="diagram-arrow-label">何度でも</div>
-        <div class="diagram-arrow">
+        <div class="diagram-arrow arrow-h">
           <svg viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M56 12 L8 12" stroke="#F5B894" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3"/>
             <polygon points="10,8 4,12 10,16" fill="#F5B894"/>
+          </svg>
+        </div>
+        <div class="diagram-arrow arrow-v">
+          <svg viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 44 L12 8" stroke="#F5B894" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3"/>
+            <polygon points="8,10 12,4 16,10" fill="#F5B894"/>
           </svg>
         </div>
       </div>
@@ -824,6 +1121,111 @@ body::after {
         <div class="flow-step-desc">何度でも対話して、自分の答えに近づける</div>
       </div>
     </div>
+  </section>
+
+  <!-- ========== NEXT STEP: CLAUDE CODE ========== -->
+  <section class="next-step">
+    <div class="next-step-header">
+      <div class="next-step-badge">next step</div>
+      <h2 class="next-step-title">
+        さらに先へ。<br>
+        <span class="accent">Claude Codeという選択肢</span>
+      </h2>
+      <p class="next-step-sub">
+        慣れてきたら、もう一段階深い使い方があります。<br>
+        会話だけでなく、Claudeが「実際に手を動かして」くれるようになります。
+      </p>
+    </div>
+
+    <!-- compare diagram -->
+    <div class="compare">
+      <div class="compare-grid">
+        <div class="compare-col left">
+          <div class="compare-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F4A8B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div class="compare-name">Claude</div>
+          <div class="compare-role">会話する相棒</div>
+          <p class="compare-desc">話を聞いて、考えて、<br>提案や答えを返してくれる。</p>
+        </div>
+        <div class="compare-col right">
+          <div class="compare-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B89BD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <path d="M9 13l2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="compare-name">Claude Code</div>
+          <div class="compare-role">手を動かす相棒</div>
+          <p class="compare-desc">パソコンの中で<br>実際に作業をしてくれる。</p>
+        </div>
+      </div>
+      <p class="compare-foot">
+        Claudeに「やり方」を聞いて、<strong>Claude Codeに「やってもらう」</strong>。<br>
+        この2つを組み合わせると、できることがぐっと広がります。
+      </p>
+    </div>
+
+    <!-- what can do -->
+    <div class="code-uses">
+
+      <div class="code-use">
+        <div class="code-use-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F5B894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3 class="code-use-title">大量のファイルを整理</h3>
+        <p class="code-use-desc">バラバラの写真や書類を、ルールに沿って一気に振り分け・名前変更してくれます。</p>
+      </div>
+
+      <div class="code-use">
+        <div class="code-use-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#95C8AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <h3 class="code-use-title">自分専用の小さなツール</h3>
+        <p class="code-use-desc">既製品にはない「自分だけに欲しい機能」を、相談しながら作れます。</p>
+      </div>
+
+      <div class="code-use">
+        <div class="code-use-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#93B8D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/>
+            <path d="M21 3v5h-5"/>
+          </svg>
+        </div>
+        <h3 class="code-use-title">繰り返す作業の自動化</h3>
+        <p class="code-use-desc">毎週・毎月の同じ手順を、一度教えれば次から任せられる形にできます。</p>
+      </div>
+
+      <div class="code-use">
+        <div class="code-use-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F4A8B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h3 class="code-use-title">時間のかかる作業を委任</h3>
+        <p class="code-use-desc">調べ物やデータの加工など、放っておきたい作業を後ろで進めてくれます。</p>
+      </div>
+
+    </div>
+
+    <!-- note -->
+    <div class="note-box">
+      <div class="note-icon">!</div>
+      <div class="note-content">
+        <h4>始める前に、ひとつだけ</h4>
+        <p>Claude Codeは自分のパソコンに入れて使うため、最初の準備に少し慣れが必要です。とはいえ、その準備自体もClaudeに相談しながら進められるので、コードが書けない人でも始められます。</p>
+      </div>
+    </div>
+
   </section>
 
   <!-- ========== TIPS ========== -->
